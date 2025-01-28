@@ -147,7 +147,7 @@ class Hirvi:
     """ Hirvi """
 
     def __init__(self):
-        self.spawnpoint = (random.randint(0, ALUE_WIDTH), random.randint(0, ALUE_HEIGHT))
+        self.spawnpoint = (random.randint(0, int(ALUE_WIDTH)), random.randint(0, int(ALUE_HEIGHT)))
 
         self.x, self.y = self.spawnpoint
         self.kohde_x, self.kohde_y = self.spawnpoint
@@ -407,7 +407,7 @@ if __name__ == "__main__":
     VIS = start_vis_query() # kysyy visualisoinnista
     time_alku = time.time()
 
-    with open("testit.txt", "r", encoding='utf-8') as input_file:
+    with open("testit.txt" if not VIS else "testitVIS.txt", "r", encoding='utf-8') as input_file:
         LINE_COUNTER = 1
         for line in input_file:
             print("Line:", LINE_COUNTER)
